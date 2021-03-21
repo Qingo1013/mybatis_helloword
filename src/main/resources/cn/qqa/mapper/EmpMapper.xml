@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--<mapper namespace="cn.qqa.pojo.EmpMapper">-->
+<mapper namespace="cn.qqa.mapper.EmpMapper">
+    <!--根据id查询Emp对应实体（数据库字段）-->
+
+    <select id="selectEmp" resultType="cn.qqa.pojo.Emp">
+      select * from Emp where id = #{id}
+    </select>
+    <insert id="insertEmp">
+      INSERT INTO
+        Emp( username)
+        VALUES ( #{username});
+    </insert>
+    <update id="updateEmp">
+        update emp
+        set username = #{username}
+        where id = #{id}
+    </update>
+    <delete id="deleteEmp">
+        delete
+        from Emp
+        where id=#{id}
+    </delete>
+</mapper>
